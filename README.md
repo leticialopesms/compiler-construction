@@ -2,7 +2,7 @@
 
 Repositório de atividades da disciplina.
 
-Alunas:
+Equipe:
 
 - [Letícia Lopes](https://github.com/leticialopesms)
 - [Luísa Penze](https://github.com/luisademelo14)
