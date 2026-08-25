@@ -1,0 +1,119 @@
+
+- [ ] Rule 0     S' -> program
+- [x] Rule 1     empty -> <empty>
+- [x] Rule 2     identifier -> ID
+- [x] Rule 3     program -> class_declaration_list
+- [x] Rule 4     class_declaration_list -> class_declaration_list class_declaration
+- [x] Rule 5     class_declaration_list -> class_declaration
+- [x] Rule 6     class_declaration -> CLASS identifier extends_opt LBRACE compound_declarations method_declarations RBRACE
+- [x] Rule 7     extends_opt -> empty
+- [x] Rule 8     extends_opt -> EXTENDS identifier
+- [x] Rule 9     compound_declarations -> compound_declarations compound_declaration
+- [x] Rule 10    compound_declarations -> empty
+- [x] Rule 11    compound_declaration -> type_specifier init_declarator_list SEMI
+- [x] Rule 12    method_declarations -> method_declarations method_declaration
+- [x] Rule 13    method_declarations -> empty
+- [x] Rule 14    method_declaration -> main_method_declaration
+- [x] Rule 15    method_declaration -> regular_method_declaration
+- [x] Rule 16    regular_method_declaration -> PUBLIC type_specifier identifier LPAREN parameter_list_opt RPAREN compound_statement
+- [x] Rule 17    main_method_declaration -> PUBLIC STATIC VOID MAIN LPAREN STRING LBRACKET RBRACKET identifier RPAREN compound_statement
+- [x] Rule 18    parameter_list_opt -> empty
+- [x] Rule 19    parameter_list_opt -> parameter_list
+- [x] Rule 20    parameter_list -> parameter_list COMMA parameter_declaration
+- [x] Rule 21    parameter_list -> parameter_declaration
+- [x] Rule 22    parameter_declaration -> type_specifier identifier
+- [x] Rule 23    init_declarator_list -> init_declarator_list COMMA init_declarator
+- [x] Rule 24    init_declarator_list -> init_declarator
+- [x] Rule 25    init_declarator -> declarator ASSIGN initializer
+- [x] Rule 26    init_declarator -> declarator
+- [x] Rule 27    initializer -> LBRACE initializer_list COMMA RBRACE
+- [x] Rule 28    initializer -> LBRACE initializer_list_opt RBRACE
+- [X] Rule 29    initializer -> assignment_expression
+- [X] Rule 30    initializer_list_opt -> initializer_list
+- [X] Rule 31    initializer_list_opt -> empty
+- [x] Rule 32    initializer_list -> initializer_list COMMA initializer
+- [x] Rule 33    initializer_list -> initializer
+- [x] Rule 34    declarator -> declarator LBRACKET RBRACKET
+- [x] Rule 35    declarator -> LPAREN declarator RPAREN
+- [x] Rule 36    declarator -> identifier
+- [x] Rule 37    type_specifier -> identifier
+- [x] Rule 38    type_specifier -> INT LBRACKET RBRACKET
+- [x] Rule 39    type_specifier -> CHAR LBRACKET RBRACKET
+- [x] Rule 40    type_specifier -> INT
+- [x] Rule 41    type_specifier -> CHAR
+- [x] Rule 42    type_specifier -> BOOLEAN
+- [x] Rule 43    type_specifier -> VOID
+- [x] Rule 44    expression -> expression COMMA assignment_expression
+- [x] Rule 45    expression -> assignment_expression
+- [x] Rule 46    assignment_expression -> unary_expression ASSIGN assignment_expression
+- [x] Rule 47    assignment_expression -> binary_expression
+- [x] Rule 48    binary_expression -> binary_expression OR binary_expression  [precedence=left, level=1]
+- [x] Rule 49    binary_expression -> binary_expression AND binary_expression  [precedence=left, level=2]
+- [x] Rule 50    binary_expression -> binary_expression NE binary_expression  [precedence=left, level=3]
+- [x] Rule 51    binary_expression -> binary_expression EQ binary_expression  [precedence=left, level=3]
+- [x] Rule 52    binary_expression -> binary_expression GE binary_expression  [precedence=left, level=4]
+- [x] Rule 53    binary_expression -> binary_expression GT binary_expression  [precedence=left, level=4]
+- [x] Rule 54    binary_expression -> binary_expression LE binary_expression  [precedence=left, level=4]
+- [x] Rule 55    binary_expression -> binary_expression LT binary_expression  [precedence=left, level=4]
+- [x] Rule 56    binary_expression -> binary_expression MINUS binary_expression  [precedence=left, level=5]
+- [x] Rule 57    binary_expression -> binary_expression PLUS binary_expression  [precedence=left, level=5]
+- [x] Rule 58    binary_expression -> binary_expression MOD binary_expression  [precedence=left, level=6]
+- [x] Rule 59    binary_expression -> binary_expression DIVIDE binary_expression  [precedence=left, level=6]
+- [x] Rule 60    binary_expression -> binary_expression TIMES binary_expression  [precedence=left, level=6]
+- [x] Rule 61    binary_expression -> unary_expression
+- [x] Rule 62    unary_expression -> unary_operator unary_expression
+- [x] Rule 63    unary_expression -> postfix_expression
+- [x] Rule 64    unary_operator -> NOT  [precedence=right, level=7]
+- [x] Rule 65    unary_operator -> MINUS  [precedence=left, level=5]
+- [x] Rule 66    unary_operator -> PLUS  [precedence=left, level=5]
+- [x] Rule 67    postfix_expression -> postfix_expression LBRACKET expression RBRACKET
+- [x] Rule 68    postfix_expression -> postfix_expression DOT LENGTH
+- [x] Rule 69    postfix_expression -> postfix_expression DOT identifier LPAREN argument_expression_opt RPAREN
+- [x] Rule 70    postfix_expression -> postfix_expression DOT identifier
+- [x] Rule 71    postfix_expression -> primary_expression
+- [x] Rule 72    primary_expression -> LPAREN expression RPAREN
+- [x] Rule 73    primary_expression -> new_expression
+- [x] Rule 74    primary_expression -> this_expression
+- [x] Rule 75    primary_expression -> constant
+- [x] Rule 76    primary_expression -> identifier
+- [x] Rule 77    argument_expression_opt -> empty
+- [x] Rule 78    argument_expression_opt -> argument_expression
+- [x] Rule 79    argument_expression -> argument_expression COMMA assignment_expression
+- [x] Rule 80    argument_expression -> assignment_expression
+- [x] Rule 81    this_expression -> THIS
+- [x] Rule 82    new_expression -> NEW identifier LPAREN RPAREN
+- [x] Rule 83    new_expression -> NEW INT LBRACKET expression RBRACKET
+- [x] Rule 84    new_expression -> NEW CHAR LBRACKET expression RBRACKET
+- [x] Rule 85    constant -> STRING_LITERAL
+- [x] Rule 86    constant -> INT_LITERAL
+- [x] Rule 87    constant -> CHAR_LITERAL
+- [x] Rule 88    constant -> boolean_literal
+- [x] Rule 89    boolean_literal -> FALSE
+- [x] Rule 90    boolean_literal -> TRUE
+- [x] Rule 91    statement_list -> statement_list statement
+- [x] Rule 92    statement_list -> statement
+- [x] Rule 93    statement -> jump_statement
+- [x] Rule 94    statement -> print_statement
+- [x] Rule 95    statement -> assert_statement
+- [x] Rule 96    statement -> for_statement
+- [x] Rule 97    statement -> while_statement
+- [x] Rule 98    statement -> if_statement
+- [x] Rule 99    statement -> expression_statement
+- [x] Rule 100   statement -> compound_statement
+- [x] Rule 101   compound_statement -> LBRACE compound_body RBRACE
+- [x] Rule 102   compound_body -> compound_declarations statement_opt
+- [x] Rule 103   statement_opt -> statement_list
+- [x] Rule 104   statement_opt -> empty
+- [x] Rule 105   expression_statement -> expression SEMI
+- [x] Rule 106   if_statement -> IF LPAREN expression RPAREN statement ELSE statement
+- [x] Rule 107   if_statement -> IF LPAREN expression RPAREN statement
+- [x] Rule 108   while_statement -> WHILE LPAREN expression RPAREN statement
+- [x] Rule 109   for_statement -> FOR LPAREN compound_declaration expression_opt SEMI expression_opt RPAREN statement
+- [x] Rule 110   for_statement -> FOR LPAREN expression_opt SEMI expression_opt SEMI expression_opt RPAREN statement
+- [x] Rule 111   expression_opt -> expression
+- [x] Rule 112   expression_opt -> empty
+- [x] Rule 113   assert_statement -> ASSERT expression SEMI
+- [x] Rule 114   print_statement -> PRINT LPAREN expression_opt RPAREN SEMI
+- [x] Rule 115   jump_statement -> RETURN SEMI
+- [x] Rule 116   jump_statement -> RETURN expression SEMI
+- [x] Rule 117   jump_statement -> BREAK SEMI

@@ -1,0 +1,7 @@
+class Main {
+    public static void main(String[] args) {
+        int a = 100 + 50;
+        int b = (123 + a) * 10;
+        char N = 'n';
+    }
+}
